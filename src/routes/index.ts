@@ -10,4 +10,5 @@ router.post("/validate-email", ValidateEmail)
 router.get("/get-domain", ExtractDomain)
 
 
+
 export default router
