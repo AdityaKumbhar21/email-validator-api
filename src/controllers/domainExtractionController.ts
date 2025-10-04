@@ -4,7 +4,7 @@ import { Request, Response } from "express";
 
 export function ExtractDomain(req: Request, res: Response): Response<ApiResponseDomainExtraction> {
     try {
-            const {email}  = req.body()
+            const {email}  = req.body
         
             if(!email || typeof email !== "string"){
                 return res.status(400).json({
