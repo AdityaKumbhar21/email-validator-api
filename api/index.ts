@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import bodyParser from "body-parser";
 import router from "../src/routes";
 import { healthCheck } from "../src/controllers/health";
@@ -8,5 +8,7 @@ app.use(bodyParser.json());
 app.use("/api", router);
 app.get("/health", healthCheck);
 
-// For Vercel serverless functions
-export default app;
+// Export handler for Vercel serverless functions
+export default (req: Request, res: Response) => {
+  return app(req, res);
+};
