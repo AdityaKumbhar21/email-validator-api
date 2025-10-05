@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/app.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/health",
+      "methods": ["GET"],
+      "dest": "src/app.ts"
+    },
+    {
+      "src": "/validate-email",
+      "methods": ["POST"],
+      "dest": "src/app.ts"
+    },
+    {
+      "src": "/get-domain",
+      "methods": ["POST"],
+      "dest": "src/app.ts"
+    }
+  ]
+}
