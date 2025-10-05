@@ -6,21 +6,15 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
+  "functions": {
+    "src/app.ts": {
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
     {
-      "src": "/health",
-      "methods": ["GET"],
-      "dest": "src/app.ts"
-    },
-    {
-      "src": "/validate-email",
-      "methods": ["POST"],
-      "dest": "src/app.ts"
-    },
-    {
-      "src": "/get-domain",
-      "methods": ["POST"],
-      "dest": "src/app.ts"
+      "source": "/(.*)",
+      "destination": "/src/app.ts"
     }
   ]
 }
