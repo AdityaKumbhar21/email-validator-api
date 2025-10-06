@@ -5,5 +5,5 @@ const emailValidationController_1 = require("../controllers/emailValidationContr
 const domainExtractionController_1 = require("../controllers/domainExtractionController");
 const router = (0, express_1.Router)();
 router.post("/validate-email", emailValidationController_1.ValidateEmail);
-router.get("/get-domain", domainExtractionController_1.ExtractDomain);
+router.post("/get-domain", domainExtractionController_1.ExtractDomain);
 exports.default = router;

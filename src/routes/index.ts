@@ -7,7 +7,7 @@ import { ExtractDomain } from "../controllers/domainExtractionController";
 const router = Router();
 
 router.post("/validate-email", ValidateEmail)
-router.get("/get-domain", ExtractDomain)
+router.post("/get-domain", ExtractDomain)
 
 
 
